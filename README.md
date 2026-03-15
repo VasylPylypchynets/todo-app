@@ -1,3 +1,3 @@
 # Todo App (Angular)
 
-🚀 **Live Demo:** [Переглянути проєкт](https://vasylpylypchynets.github.io/todo-app/)
+🚀  [**Live Demo:**](https://vasylpylypchynets.github.io/todo-app/)
