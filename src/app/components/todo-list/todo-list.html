@@ -1,0 +1,29 @@
+<div class="todo-container">
+  <h2>My Tasks</h2>
+  <app-todo-form (onAdd)="addTodo($event)"></app-todo-form>
+
+  <div class="filters">
+    <button (click)="setFilter('all')" [class.active]="filter === 'all'">All</button>
+    <button (click)="setFilter('active')" [class.active]="filter === 'active'">Active</button>
+    <button (click)="setFilter('completed')" [class.active]="filter === 'completed'">
+      Completed
+    </button>
+  </div>
+
+  <div class="sort-by">
+    <span>Sort:</span>
+    <button (click)="sortBy = 'priority'" [class.active]="sortBy === 'priority'">
+      By priority
+    </button>
+    <button (click)="sortBy = 'added'" [class.active]="sortBy === 'added'">By added</button>
+  </div>
+
+  <div class="list">
+    <app-todo-item
+      *ngFor="let item of filteredTodos"
+      [todo]="item"
+      (onDelete)="deleteTodo($event)"
+      (onUpdate)="updateTodo($event)"
+    ></app-todo-item>
+  </div>
+</div>

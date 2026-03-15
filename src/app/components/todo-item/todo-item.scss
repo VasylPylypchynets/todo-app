@@ -1,0 +1,44 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+
+  &.done .title {
+    text-decoration: line-through;
+    color: gray;
+  }
+
+  .title {
+    flex: 1;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    &[data-priority='high'] {
+      background: #ffcccc;
+      color: red;
+    }
+    &[data-priority='medium'] {
+      background: #fff3cd;
+      color: #856404;
+    }
+    &[data-priority='low'] {
+      background: #d4edda;
+      color: green;
+    }
+  }
+
+  button {
+    background: none;
+    border: 1px solid red;
+    color: red;
+    cursor: pointer;
+  }
+}
+
+

@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()" class="add-form">
+  <input type="text" [(ngModel)]="title" name="title" placeholder="Enter a task" />
+  <select [(ngModel)]="priority" name="priority">
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+  </select>
+  <button type="submit" [disabled]="!title.trim()">Add</button>
+</form>

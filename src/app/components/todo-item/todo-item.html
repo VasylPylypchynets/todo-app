@@ -1,0 +1,30 @@
+<div class="item" [class.done]="todo.completed">
+  <div class="content" *ngIf="!isEditing; else editMode">
+    <input type="checkbox" [checked]="todo.completed" (change)="toggleStatus()" />
+    <span class="title" (dblclick)="startEdit()">{{ todo.title }}</span>
+    <span class="badge" [attr.data-priority]="todo.priority">{{ todo.priority }}</span>
+    <div class="actions">
+      <button type="button" (click)="startEdit()">Edite</button>
+      <button type="button" (click)="onDelete.emit(todo.id)">Delite</button>
+    </div>
+  </div>
+
+  <ng-template #editMode>
+    <div class="edit-container">
+      <input
+        type="text"
+        [(ngModel)]="editTitle"
+        (keyup.enter)="saveEdit()"
+        (keyup.esc)="cancelEdit()"
+        autofocus
+      />
+      <select [(ngModel)]="editPriority" name="priority">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <button type="button" (click)="saveEdit()">Save</button>
+      <button type="button" (click)="cancelEdit()">Cancel</button>
+    </div>
+  </ng-template>
+</div>

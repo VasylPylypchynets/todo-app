@@ -1,0 +1,47 @@
+.todo-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  .filters,
+  .sort-by {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    align-items: center;
+
+    button {
+      flex: 1;
+      padding: 8px 10px;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+
+      &.active {
+        background: #007bff;
+        color: white;
+        border-color: #007bff;
+      }
+    }
+
+    span {
+      font-weight: 600;
+      margin-right: 8px;
+      white-space: nowrap;
+    }
+  }
+
+  .list {
+    display: grid;
+    gap: 10px;
+  }
+}
